@@ -86,13 +86,6 @@ fit_ps_data_model <- function(obs_pp,sampling_areas,covs,meshes,grf_priors,sampl
   
   for(i in names(covs)){
     for(j in 1:length(covs[[i]])){
-      exdatal1[[names(covs[[i]])[j]]] <- raster::extract(covs[[i]][[j]],full_sf)[,2]
-    }
-  }
-  
-  
-  for(i in names(covs)){
-    for(j in 1:length(covs[[i]])){
       if(i == "eco_covs"){
         print(names(covs[[i]])[j])
         exdatal1[[names(covs[[i]])[j]]] <- raster::extract(covs[[i]][[j]],full_sf)[,2]
